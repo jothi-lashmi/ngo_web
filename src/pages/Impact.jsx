@@ -4,6 +4,7 @@ import SectionTitle from '../components/common/SectionTitle';
 import StatsSection from '../components/common/StatsSection';
 import ImageTextSection from '../components/common/ImageTextSection';
 import CTASection from '../components/common/CTASection';
+import ImpactMap from '../components/impact/ImpactMap';
 
 const Impact = () => {
   return (
@@ -15,6 +16,7 @@ const Impact = () => {
         </div>
       </section>
 
+      {/* Key Numbers Stats Section */}
       <section className="section">
         <div className="container">
           <SectionTitle
@@ -25,6 +27,10 @@ const Impact = () => {
         </div>
       </section>
 
+      {/* Interactive Our Impact Map Section */}
+      <ImpactMap />
+
+      {/* Financial Audit */}
       <section className="section section-alt">
         <div className="container">
           <ImageTextSection

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { navLinks } from '../../data/navigation';
 import { siteData } from '../../data/siteData';
 import { X, Heart, HeartHandshake } from 'lucide-react';
@@ -24,12 +24,18 @@ const MobileMenu = ({ isOpen, onClose }) => {
       <div className="mobile-menu-overlay" onClick={onClose} aria-hidden="true" />
       <aside className={`mobile-menu ${isOpen ? 'open' : ''}`} aria-label="Mobile Navigation Menu">
         <div className="mobile-menu-header">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontWeight: 800, color: 'var(--primary-dark)', fontSize: '1.15rem' }}>
+          <Link
+            to="/"
+            onClick={onClose}
+            aria-label={`${siteData.name} Home`}
+            title={`${siteData.name} - Home`}
+            style={{ display: 'flex', alignItems: 'center', gap: '10px', fontWeight: 800, color: 'var(--primary-dark)', fontSize: '1.15rem', textDecoration: 'none' }}
+          >
             <div style={{ width: '36px', height: '36px', borderRadius: 'var(--radius-md)', background: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#ffffff' }}>
               <HeartHandshake size={20} />
             </div>
             {siteData.name}
-          </div>
+          </Link>
           <button
             onClick={onClose}
             aria-label="Close Navigation Menu"

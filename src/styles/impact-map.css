@@ -1,0 +1,660 @@
+/* ==========================================
+   IMPACT MAP SECTION — CONSISTENT & LIGHT THEME
+   ========================================== */
+
+.impact-map-section {
+  padding: var(--section-padding) 0;
+  background-color: var(--bg-surface);
+}
+
+/* ── Header ── */
+.impact-map-header {
+  max-width: 680px;
+  margin: 0 auto 36px;
+}
+
+.impact-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.impact-map-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.impact-map-description {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── Tabs Container ── */
+.impact-tabs-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 36px;
+}
+
+.impact-tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #ffffff;
+  padding: 6px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+}
+
+.impact-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: var(--radius-full);
+  border: none;
+  background: transparent;
+  color: var(--text-main);
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.impact-tab-btn:hover {
+  color: var(--primary);
+  background-color: var(--bg-surface);
+}
+
+.impact-tab-btn.active {
+  background-color: var(--primary);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
+}
+
+.tab-flag {
+  font-size: 1.1rem;
+}
+
+.tab-count-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 12px;
+  background-color: rgba(15, 23, 42, 0.08);
+}
+
+.impact-tab-btn.active .tab-count-badge {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+/* ── Main Grid (Desktop: 2 Columns) ── */
+.impact-map-grid {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+/* ── Left Sidebar (Height strictly locked by JS to match right 2 containers) ── */
+.impact-sidebar {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.sidebar-summary-card {
+  background: var(--primary-light);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  border: 1px solid rgba(13, 148, 136, 0.18);
+  flex-shrink: 0;
+  margin-bottom: 16px;
+}
+
+.summary-info h3 {
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 4px;
+}
+
+.summary-info p {
+  font-size: 0.82rem;
+  color: var(--text-main);
+  line-height: 1.45;
+  margin-bottom: 14px;
+}
+
+.summary-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.metric-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.metric-icon {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.metric-value {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--dark);
+  line-height: 1.1;
+}
+
+.metric-label {
+  display: block;
+  font-size: 0.70rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.location-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+}
+
+.location-list-header h4 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.list-hint {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+/* Scrollable Location List filling remaining height */
+.location-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.location-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.location-list::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.location-list::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.location-list::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.location-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  background: var(--bg-surface);
+  cursor: pointer;
+  transition: var(--transition);
+  outline: none;
+}
+
+.location-item:hover,
+.location-item:focus-visible {
+  border-color: var(--primary);
+  background: #ffffff;
+  box-shadow: var(--shadow-sm);
+  transform: translateX(2px);
+}
+
+.location-item.active {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.location-item-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.location-item.active .location-item-icon {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.location-item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.location-name {
+  display: block;
+  font-weight: 700;
+  font-size: 0.90rem;
+  color: var(--dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.location-beneficiaries {
+  display: block;
+  font-size: 0.76rem;
+  color: var(--text-muted);
+}
+
+.location-item-count {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.count-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 9px;
+  border-radius: var(--radius-full);
+  background: #ffffff;
+  color: var(--secondary);
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  white-space: nowrap;
+}
+
+.location-item.active .count-pill {
+  background: var(--secondary);
+  color: #ffffff;
+  border-color: var(--secondary);
+}
+
+.chevron {
+  color: var(--text-light);
+  transition: transform 0.2s ease;
+}
+
+.location-item:hover .chevron,
+.location-item.active .chevron {
+  color: var(--primary);
+  transform: translateX(2px);
+}
+
+/* ── Right Panel: Map Container + Detail Card ── */
+.impact-map-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Map Viewport Box — 480px height consistent across ALL 3 tabs */
+.map-view-box {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  padding: 20px;
+  height: 480px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Map Stage: Matches SVG Aspect Ratio Tightly ── */
+.map-stage {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Base Image: Real SVG with light, soft colors, crisp rendering */
+.map-base-image {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ── Map Marker Pin ── */
+.map-marker {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  z-index: 10;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  padding: 0;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.map-marker:hover,
+.map-marker--active {
+  z-index: 30;
+  transform: translate(-50%, -100%) scale(1.18);
+}
+
+/* Pulsing halo ring originating at pin tip */
+.map-marker__pulse {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(249, 115, 22, 0.4);
+  animation: markerPulse 1.8s ease-out infinite;
+  pointer-events: none;
+}
+
+@keyframes markerPulse {
+  0% {
+    transform: translate(-50%, 50%) scale(0.5);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(-50%, 50%) scale(2.4);
+    opacity: 0;
+  }
+}
+
+/* Upright SVG Vector Pin */
+.map-marker__svg {
+  display: block;
+  overflow: visible;
+  filter: drop-shadow(0 3px 5px rgba(15, 23, 42, 0.22));
+  transition: filter 0.2s ease;
+}
+
+.map-marker:hover .map-marker__svg,
+.map-marker--active .map-marker__svg {
+  filter: drop-shadow(0 5px 12px rgba(249, 115, 22, 0.4));
+}
+
+/* Tooltip on hover/active */
+.map-marker__tooltip {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--dark);
+  color: #ffffff;
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  box-shadow: var(--shadow-lg);
+}
+
+.map-marker__tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--dark);
+}
+
+.map-marker__tooltip-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.map-marker__tooltip-meta {
+  font-size: 0.72rem;
+  color: var(--primary-light);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.map-marker:hover .map-marker__tooltip,
+.map-marker--active .map-marker__tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ── Location Detail Card (Below Container) ── */
+.location-detail-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+  padding: 20px 24px;
+  box-sizing: border-box;
+}
+
+.detail-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.detail-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.detail-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--secondary-light);
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.detail-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--dark);
+  line-height: 1.2;
+}
+
+.detail-subtitle {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.detail-project-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.detail-description {
+  font-size: 0.91rem;
+  color: var(--text-main);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.detail-tags-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.tags-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--dark-heading);
+}
+
+.detail-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  color: var(--text-main);
+  border: 1px solid var(--border);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN (Tablet & Mobile)
+   ========================================== */
+@media (max-width: 992px) {
+  .impact-map-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* On mobile: Map comes first, sidebar below */
+  .impact-map-container {
+    order: 1;
+  }
+
+  .impact-sidebar {
+    order: 2;
+    height: 480px;
+  }
+
+  .map-view-box {
+    height: 440px;
+  }
+
+  .impact-tabs {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .impact-tab-btn {
+    flex: 1;
+    justify-content: center;
+    padding: 10px 10px;
+    font-size: 0.85rem;
+  }
+
+  .tab-count-badge {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .impact-map-title {
+    font-size: 1.75rem;
+  }
+
+  .map-view-box {
+    height: 350px;
+    padding: 12px;
+  }
+
+  .impact-sidebar {
+    height: 420px;
+    padding: 16px;
+  }
+
+  .detail-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .map-marker__pin {
+    width: 24px;
+    height: 30px;
+  }
+
+  .map-marker__count {
+    font-size: 8.5px;
+  }
+}

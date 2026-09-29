@@ -13,7 +13,7 @@ const Navbar = () => {
     <header className="header">
       <div className="container">
         <nav className="navbar">
-          <Link to="/" className="navbar-brand">
+          <Link to="/" className="navbar-brand" aria-label={`${siteData.name} Home`} title={`${siteData.name} - Home`}>
             <div className="navbar-logo-icon">
               <HeartHandshake size={24} />
             </div>
